@@ -1,8 +1,7 @@
-version: '3.8'
 
 services:
   backend:
-    build: .
+    build: ./app
     ports:
       - "${PORT}:8080"
     env_file:

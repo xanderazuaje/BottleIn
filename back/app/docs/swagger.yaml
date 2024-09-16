@@ -1,0 +1,29 @@
+basePath: /api
+definitions:
+  models.Response:
+    properties:
+      message:
+        example: Hello from Go Backend!
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample Go backend server.
+  title: Go Backend API
+  version: "1.0"
+paths:
+  /hello:
+    get:
+      description: Returns a hello message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: Say Hello
+      tags:
+      - hello
+swagger: "2.0"

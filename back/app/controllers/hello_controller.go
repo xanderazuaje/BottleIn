@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"backend/models"
+	"github.com/xanderazuake/bottlenet/backend/app/models"
 )
 
 // HelloHandler handles the /api/hello endpoint

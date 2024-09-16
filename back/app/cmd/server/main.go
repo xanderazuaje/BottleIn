@@ -3,14 +3,16 @@ package main
 
 import (
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
+	"time"
 
-	"github.com/xanderazuake/bottlenet/backend/app/config"
-	"github.com/xanderazuake/bottlenet/backend/app/routes"
+	"github.com/xanderazuake/bottlenet/backend/app/config" // Updated import path
+	"github.com/xanderazuake/bottlenet/backend/app/routes" // Updated import path
 
 	httpSwagger "github.com/swaggo/http-swagger"
-	_ "github.com/xanderazuake/bottlenet/backend/app/docs"
+	_ "github.com/xanderazuake/bottlenet/backend/app/docs" // Swagger docs path
 )
 
 // @title           Go Backend API
@@ -20,6 +22,9 @@ import (
 // @BasePath  /api
 
 func main() {
+	// Seed the random number generator
+	rand.Seed(time.Now().UnixNano())
+
 	// Initialize MongoDB
 	config.InitializeDB()
 
